@@ -1,0 +1,11 @@
+# The default config for FunBlockLuckyBlock by cosmicnebula200
+version: 1.0.0
+
+# Available modes
+# - blacklist
+# - whitelist
+mode: blacklist
+
+worlds:
+  - 'world1'
+  - 'world2'

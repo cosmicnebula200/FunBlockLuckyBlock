@@ -1,0 +1,22 @@
+lucky-block-id: 247
+
+levels:
+  1:
+    drops:
+      - id: 1
+        meta: 0
+        name: CustomDropName
+        tags:
+          - name: BankNote
+            type: int
+            value: 5
+          - name: EpicTag
+            type: string
+            value: true
+    blocks:
+      - id: 7
+        meta: 0
+      - id: 1
+        meta: 0
+    commands:
+      - 'give {name} 7 5'
