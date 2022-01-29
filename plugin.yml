@@ -3,3 +3,8 @@ api: 4.0.0
 author: cosmicnebula200
 main: cosmicnebula200\FunBlockLuckyBlock\FunBlockLuckyBlock
 version: 1.0.0
+
+permissions:
+  funblockluckyblock.command:
+    default: op
+    description: This permission allows the user to execute the luckyblock command

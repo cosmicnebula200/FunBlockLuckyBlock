@@ -15,4 +15,9 @@ class LevelManager
         // TODO
     }
 
+    public function getMaxLevel(): int
+    {
+        return count($this->levels);
+    }
+
 }

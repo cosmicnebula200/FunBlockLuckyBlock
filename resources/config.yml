@@ -9,3 +9,8 @@ mode: blacklist
 worlds:
   - 'world1'
   - 'world2'
+
+luckyblock:
+  block-id: 247
+  item-id: 247
+  hardness: 5

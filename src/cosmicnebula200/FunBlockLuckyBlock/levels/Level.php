@@ -10,20 +10,11 @@ use pocketmine\block\BlockFactory;
 class Level
 {
 
-    /** @var int */
-    private int $level;
     /** @var array */
     private array $drops, $blocks, $commands;
 
-    public function __construct(array $drops)
+    public function __construct(array $drops, array $blocks, array $commands)
     {
-        foreach ($drops as $id => $drop)
-        {
-            for ($x = 0; $x <= $drop['chance']; $x++)
-            {
-                // TODO
-            }
-        }
     }
 
 }
