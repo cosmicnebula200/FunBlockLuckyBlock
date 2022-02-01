@@ -6,6 +6,7 @@ use CortexPE\Commando\args\IntegerArgument;
 use CortexPE\Commando\args\RawStringArgument;
 use CortexPE\Commando\BaseCommand;
 use cosmicnebula200\FunBlockLuckyBlock\FunBlockLuckyBlock;
+use cosmicnebula200\FunBlockLuckyBlock\levels\Level;
 use pocketmine\command\CommandSender;
 use pocketmine\item\ItemFactory;
 use pocketmine\player\Player;
@@ -34,9 +35,14 @@ class LuckyBlockCommand extends BaseCommand
             $player = FunBlockLuckyBlock::getInstance()->getServer()->getPlayerByPrefix($args['player']);
         if (!$player instanceof Player) {
             $sender->sendMessage('Not a valid Player');
+            return;
+        }
+        if (!FunBlockLuckyBlock::getInstance()->getLevelManager()->getLevel($level) instanceof Level) {
+            $sender->sendMessage('Not a valid level');
+            return;
         }
         $item = ItemFactory::getInstance()->get(FunBlockLuckyBlock::getInstance()->getConfig()->getNested('luckyblock.item-id'));
-        $item->getNamedTag()->setString('luckyblock', 'true');
+        $item->getNamedTag()->setString('funblockluckyblock', 'true');
         $item->getNamedTag()->setInt('level', $level);
         $item->setCount($count);
         $player->getInventory()->addItem($item);

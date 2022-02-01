@@ -15,6 +15,15 @@ class LevelManager
         // TODO
     }
 
+    /**
+     * @param int $level
+     * @return Level|null
+     */
+    public function getLevel(int $level): ?Level
+    {
+        return $this->levels[$level] ?? null;
+    }
+
     public function getMaxLevel(): int
     {
         return count($this->levels);
