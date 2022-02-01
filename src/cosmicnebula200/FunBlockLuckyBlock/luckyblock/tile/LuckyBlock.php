@@ -15,9 +15,8 @@ class LuckyBlock extends Spawnable
     /** @var int  */
     private int $level;
 
-    public function __construct(World $world, Vector3 $pos, int $level = 0)
+    public function __construct(World $world, Vector3 $pos)
     {
-        $this->level = $level;
         parent::__construct($world, $pos);
     }
 
@@ -44,15 +43,7 @@ class LuckyBlock extends Spawnable
         } catch (NoSuchTagException) {
             $level = 0;
         }
-    }
-
-    /**
-     * @param int $level
-     * @return void
-     */
-    public function setLevel(int $level): void
-    {
-        $this->level = $level;;
+        $this->readSaveData(CompoundTag::create()->setInt('level', $level));
     }
 
     /**
