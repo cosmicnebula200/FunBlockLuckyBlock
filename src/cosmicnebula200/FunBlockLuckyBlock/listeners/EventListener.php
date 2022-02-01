@@ -33,26 +33,4 @@ class EventListener implements Listener
         }
     }
 
-    /**
-     * @param BlockPlaceEvent $event
-     * @return void
-     * @priority MONITOR
-     */
-    public function onPlace(BlockPlaceEvent $event): void
-    {
-        $item = $event->getItem();
-        $block = $event->getBlock();
-        $world = $event->getPlayer()->getWorld();
-        try {
-            $level = $item->getNamedTag()->getInt('level');
-        } catch (NoSuchTagException) {
-            return;
-        }
-        FunBlockLuckyBlock::getInstance()->getScheduler()->scheduleDelayedTask(new ClosureTask(function () use($world, $block, $level):void {
-            $tile = $world->getTile($block->getPosition());
-            if ($tile instanceof LuckyBlock)
-                $tile->setLevel($level);
-        }), 1);
-    }
-
 }
