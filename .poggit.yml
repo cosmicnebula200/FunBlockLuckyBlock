@@ -5,4 +5,10 @@ branches:
 projects:
   FunBlockLuckyBlock:
     path: ""
+    libs:
+      - src: CortexPE/Commando/Commando
+        version: ^3.0.0
+        branch: PM4
+      - src: muqsit/simplepackethandler/SimplePacketHandler
+          version: ^0.0.1
 ...
